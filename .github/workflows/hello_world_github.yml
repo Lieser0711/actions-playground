@@ -7,14 +7,21 @@ on:
     branches: [main]
   workflow_dispatch:
 
+env:
+  APP_ENV: development
+
 jobs:
   build:
     runs-on: ubuntu-22.04
+    env:
+      STAGE: test
     steps:
       - run: echo "Building projects"
+      - run: echo "$STAGE"
       
   test:
     runs-on: ubuntu-22.04
     needs: build
     steps:
       - run: echo "Running tests"
+      - run: echo "$APP_ENV"
