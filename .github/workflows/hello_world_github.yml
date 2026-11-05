@@ -17,7 +17,7 @@ jobs:
       STAGE: test
     steps:
       - run: echo "Building projects"
-      - run: echo "'$STAGE'"
+      - run: echo "$STAGE"
       
   test:
     runs-on: ubuntu-22.04
