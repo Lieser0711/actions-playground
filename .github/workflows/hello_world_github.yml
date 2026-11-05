@@ -8,8 +8,13 @@ on:
   workflow_dispatch:
 
 jobs:
-  test:
+  build:
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v4
-      - run: echo "Hello, Github Actions!"
+      - run: echo "Building projects"
+      
+  test:
+    runs-on: ubuntu-22.04
+    needs: build
+    steps:
+      - run: echo "Running tests"
