@@ -25,3 +25,11 @@ jobs:
     steps:
       - run: echo "Running tests"
       - run: echo "$APP_ENV"
+
+  deploy:
+    runs-on: ubuntu-22.04
+    needs: test
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - run: echo "Deploying"
+
