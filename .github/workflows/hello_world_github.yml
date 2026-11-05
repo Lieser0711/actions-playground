@@ -1,0 +1,10 @@
+name: hello world github
+
+on:
+  push: [main]
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-22.04
+    run: echo "Hello, Github Actions!"
